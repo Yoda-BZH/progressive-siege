@@ -28,3 +28,14 @@ Optionnal options:
     ./progressive-siege -u https://beta.example.com --time 5M --steps 50,100,150,200 --delay 20 --ulimit 8192
 ```
 
+## Nota
+
+Some options cannot be chnged with siege's cli options. The configuration file may needs to be adjusted.
+
+
+## More than 1023 connections
+
+It may be tricky to run more than 1023 connections, event with a modified `limit` value and a bigger `ulimit -n` value.
+
+The best solution may be to use tmux, open several panes, synchonise then with `:set synchronize-panes` and run the script in parallel.
+
